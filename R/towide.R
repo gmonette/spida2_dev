@@ -1,0 +1,232 @@
+#' Wide data set from long data set
+#'
+#' Creates a wide data frame from a long data frame identifying
+#' an 'id' variable and using a time variable whose values
+#' provide suffixes for time-varying variable names in wide form.
+#'
+#' In contrast with reshape in stats, this function
+#' identifies variables that
+#' are invariant with respect to 'idvar' and does not
+#' expand them to wide form.
+#'
+#' Only 'time'-varying variables are expanded to wide form.
+#'
+#' @param data a data frame in 'long' form.
+#' @param idvar (default: 'id') the variable(s) identifying each group of rows
+#' that are transformed to a single row in the wide file.
+#' @param timevar (default: 'time') the variable containing
+#' the occasion names in the long file.
+#' @param sep (default: '_') the character(s) that separate the name of
+#' a time-varying variable in the long form
+#' from the added suffix for the
+#' correponding names in wide form. Default: '_'.
+#' @param add.invariants (default TRUE) additional variables that are invariant
+#' within clusters are kept in output even if not included in 'idvar'
+#' (default: names(data)[gicc(data, data[idvar])]).
+#' For all variables, except \code{idvar} to be treated as time-varying,
+#' use \code{invar = NULL}.
+#' @param \dots Other arguments are passed to \link{list("stats::reshape")}.
+#' @seealso \code{\link{tolong}}
+#' @return a data frame in wide form in which each variable that varies
+#' within levels of 'idvar' is turned into as many variables as there are
+#' distinct values of 'timevar' using the values of 'timevar' as suffixes to
+#' name the variables in wide form.
+#' @examples
+#' \dontrun{
+#' # Subjects A, B observed on varying occasions, measuring variables
+#' #  x and y in different locations
+#' dd <- data.frame( subject = c('A','A','B'),
+#'                   time = c(1,2,1), 
+#'                   y.left = 1:3, y.right = 1:3, 
+#'                   x.left= 1:3, x.right = 11:13, x.middle = 21:23 
+#'                   )
+#' dd
+#' tolong(dd, sep = '.') # uses 'time' as default name for occasions variable
+#' # Specify new 'timevar' to avoid clobbering 'time':
+#' dl <- tolong(dd, sep = '.', timevar = "location") 
+#' dl
+#' #
+#' # Back to wide format: Use 'idvar' to specify combination of 
+#' # of variable values that uniquely identifies rows in wide file:
+#' #
+#' towide(dl, idvar = c('subject','time'), timevar = 'location')
+#'
+#' # Long file with additional constants
+#'
+#' dl <- data.frame(name = rep(c('A','B','C'), c(3,3,2)),
+#'                  site = c('head','neck','jaw','chest')[
+#'                       c(1,2,3,1,2,3,1,4)],
+#'                  sex = rep(c('male','female','male'), c(3,3,2)),
+#'                  var1 = 1:8,
+#'                  var2 = 11:18,
+#'                  invar = rep(1:3, c(3,3,2)))
+#' dl
+#' towide(dl, c('name','sex'), 'site')
+#'
+#' # Two indexing variable: e.g. hippocampal volume: 2 sides x 3 sites
+#'
+#' dl <- data.frame(name = rep(LETTERS[1:3], each = 6),
+#'                  side = rep(c('left','right'), 9),
+#'                  site = rep(rep(c('head','body','tail'),each = 2),3),
+#'                  volume = 1:18,
+#'                  grade = LETTERS[1:18],
+#'                  sex = rep(c('female','male','female'), each = 6),
+#'                  age = rep(c(25, 43, 69), each = 6))
+#' dl
+#' (dl.site <- towide(dl, c('name','side'), 'site'))
+#' (dl.site.side <- towide(dl.site, c('name'), 'side'))
+#' dl.site.side[,sort(names(dl.site.side))]
+#'
+#' #
+#' # Switching long and wide variables
+#' # Multiple variables in 'idvar'
+#' #  
+#' dd <- read.table(header=T,text="
+#' country    variable   1990 1991 1992 1993
+#' Canada     population   20   21   24   26
+#' Canada     income       10   12   12   11
+#' Mexico     population   50   52   53   54
+#' Mexico     income       30   31   33   34
+#' ")
+#'  dd                 
+#'  names(dd) <- sub("^X","val__", names(dd)) # use '__' in case '_' is used elsewhere                
+#'  dd
+#'  dl <- tolong(dd, sep = '__', timevar = 'year')
+#'  dl
+#'  dw <- towide(dl, idvar = c('country','year'), 
+#'         timevar = 'variable')
+#'  dw
+#'  dw[grep('^id_',names(dw))] <- NULL
+#'  dw
+#'  names(dw) <- sub("^val_","", names(dw))
+#'  dw
+#' 
+#' #
+#' #  A function to flip years and variables
+#' #
+#' flip <- function(data, rowvar = 'country', 
+#'                  colfmt = '[0-9]{4}$', 
+#'                  varname = 'variable', sep = '__') {
+#'     names(data) <- sub(
+#'          paste0("^.*(",colfmt,')'), 
+#'          paste0("value",sep,"\\1"), 
+#'          names(data))
+#'     dl <- tolong(data, sep = "__", timevar = 'year', idvar = "XXXX")
+#'     dw <- towide(dl, timevar = varname, idvar = c(rowvar, 'year'), sep = '__')
+#'     dw <- dw[, - grep("^XXXX", names(dw))]
+#'     names(dw) <- sub(paste0('value',sep), '', names(dw))
+#'     dw
+#' }     
+#' flip(dd)
+#' 
+#' #     
+#' # Mixture of time-varying and time-invariant variables
+#' #
+#' 
+#' dl <- data.frame(subject = c('A','A','A','B','B','C','C'), 
+#'                  time = c(1,2,3,1,2,1,3),
+#'                  sex = c('male','male','male','female','female','male','male'),
+#'                  y = c(10,10,10,11,11,12,12), # accidentally time-invariant
+#'                  x = c(20,21,22,25,26,18,19)) # time-varying
+#' towide(dl, idvar = 'subject', timevar = 'time')  
+#' towide(dl, idvar = 'subject', timevar = 'time', add.invariants = FALSE)  
+#' 
+#' # multiple time variables: e.g. month, day
+#' 
+#' dl <- data.frame(subject = c('A','A','A','B','B','C','C'), 
+#'                  month = c(1,1,3,2,2,1,3),
+#'                  day =   c(10,15, 2, 3, 9, 20, 2),
+#'                  sex = c('male','male','male','female','female','male','male'),
+#'                  y = c(10,10,10,11,11,12,12), # accidentally time-invariant
+#'                  x = c(20,21,22,25,26,18,19)) # time-varying
+#' # need single time variable
+#' dl
+#' dl$date <- with(dl, as.Date(paste0(month,'-',day),'%m-%d'))  # uses the current year
+#' dl
+#' dw <- towide(dl, idvar = 'subject', timevar = c('date'))
+#' dl2 <- tolong(dw, sep = '_')
+#' sortdf(dl2, ~ subject/time)
+#' #
+#' # Variables in long form
+#' #
+#' # This illustrates what how towide works when some variables 
+#' # invariant wrt the key and others vary. Here the key is
+#' # c('country','year'). The key-variant variables are value
+#' # and rownum. The invariant variable is country.code
+#' # 
+#' dd <- read.table(header=TRUE, text = "
+#' country   year   variable    value country.code  rownum  
+#' Canada     2001    atemp       20   CAN           1
+#' Canada     2002    atemp       23   CAN           2
+#' US         2001    atemp       23   USA           3
+#' US         2002    atemp       23   USA           4
+#' Canada     2001    wind       120   CAN           5
+#' Canada     2002    wind       123   CAN           6
+#' US         2001    wind       123   USA           7
+#' US         2002    wind       123   USA           8
+#' Canada     2001    rain       220   CAN           9
+#' Canada     2002    rain       223   CAN           10
+#' US         2001    rain       223   USA           11
+#' US         2002    rain       223   USA           12
+#' ")
+#' (dw <- towide(dd, idvar = c('country','year'), timevar = 'variable'))
+#' #
+#' # to keep only the variable name as a name
+#' #
+#' names(dw) <- sub('^value_','', names(dw))
+#' dw
+#' #
+#' # to get rid of other time varying variable
+#' #
+#' dw <- dw[, - grep('_', names(dw))]
+#' dw
+#' }
+#' @export
+towide <- function(data,
+           idvar = 'id',
+           timevar = 'time',
+           sep = '_',
+           add.invariants = TRUE,
+           ...) {
+    invars <- function( data, idvar) {
+      # identify invariant variables
+      ret <- sapply(data, function(x) {
+        max(capply(x,data[,idvar], function(y) length(unique(y))))
+      }
+      )
+      ret <- ret == 1
+      ret
+    }
+    
+    if(add.invariants) invars <- names(data)[invars(data, idvar)]
+    dinv <- data[,invars]
+    dinv <- dinv[!duplicated(dinv[idvar]),]
+    dl <- data[,c(idvar, names(data) %less% invars)]
+    dw <- stats::reshape(dl, direction = 'wide',
+                         idvar = idvar,
+                         timevar = timevar, 
+                         sep = sep, 
+                         ...)
+    merge(dw, dinv, by = idvar)
+  }
+
+towide_old <- function(data,
+                   idvar = 'id',
+                   timevar = 'time',
+                   sep = '_',
+                   add.invariants = TRUE,
+                   ...) {
+  invars <- function( data, idvar) {
+    # identify invariant variables
+    ret <- sapply(data, function(x) {
+      max(capply(x,data[,idvar], function(y) length(unique(y))))
+    }
+    )
+    ret <- ret == 1
+    ret
+  }
+  if(add.invariants) idvar <- names(data)[invars(data, idvar)]
+  stats::reshape(data, direction = 'wide',
+                 idvar = idvar,
+                 timevar = timevar, sep = sep, ...)
+}

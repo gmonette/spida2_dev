@@ -114,7 +114,7 @@
 #'          \code{\link{Lfx}}, \code{\link{getX}}, \code{\link{M}},
 #'          \code{\link{Lall}},\code{\link{Lc}},\code{\link{Lequal}},
 #'          \code{\link{Ldiff}},\code{\link{Lmu}},\code{\link{Lmat}},\code{\link{Lrm}},
-#'          \code{\link{Leff}}, \code{\link{as.data.frame.wald}}. To extend to new
+#'          \code{\link{as.data.frame.wald}}. To extend to new
 #'          models see \code{\link{getFix}}. To generate hypothesis matrices for general
 #'          splines see \code{\link{gsp}} and \code{\link{sc}}.
 #' @references REFERENCES HERE
@@ -1153,7 +1153,7 @@ print.cat <- function(object,...) {
 #' \code{L}.  formula defining a main effect or an interaction term involving
 #' factors.
 #' @return hypothesis matrix
-#' @seealso \code{\link{wald},\link{Leff}} and \code{\link{Lfx}} for a new
+#' @seealso \code{\link{wald} and \code{\link{Lfx}} for a new
 #' improved but experimental version.
 #' @examples
 #' \dontrun{

@@ -3,6 +3,8 @@
 ##
 #' Generic test for constant
 #'
+#' Illustrates more stuff in the help file.
+#'
 #' @param x vector or data frame
 #' @param na.rm (default FALSE) logical value indicating whether `NA` values should be ignored 
 #' @param \dots other arguments

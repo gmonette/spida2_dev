@@ -96,6 +96,6 @@ education | type, cbind(Prestige,chat)[order(Prestige$education),], type =
 }
 }
 \seealso{
-\code{\link{wald},\link{Leff}} and \code{\link{Lfx}} for a new
+\code{\link{wald}} and \code{\link{Lfx}} for a new
 improved but experimental version.
 }

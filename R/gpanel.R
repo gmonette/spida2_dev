@@ -347,7 +347,8 @@ panel.labels <-
 #'       using syntax: \code{~ x + g1 + g2} (the variable to fill in comes first)
 #' @param xpd expansion beyond range of predictor (default 1.0, i.e. no expansion)
 #' @describeIn panel.fit
-#' @export
+#' 
+#' 
 fillin <- function(data, form, n = 200, xpd = 1.0) {
   #       levels of g
   #
@@ -432,16 +433,16 @@ fillin <- function(data, form, n = 200, xpd = 1.0) {
 #' @param form formula evaluated in data. The first term defines the variable with values to be filled in and the remaining terms define the variables to be used for grouping determining the minima and maxima within which values are added.
 #' @param xpd expansion factor to add points beyond minima and maxima. Default 1.0.
 #' @param fit fitted values of a model, generally passed through 'layer' from a call to 'xyplot': e.g. \code{xyplot( y ~ x, data, groups = g, fit = data$yhat, lower = with(data, yhat - 2*se), upper = with(data, yhat + 2*se), subscripts = T)}
-#' @param lower,upper
-#' @param subscripts
-#' @param dots
-#' @param col
-#' @param group.number
-#' @param alpha
+#' @param lower,upper lowe and upper limits of the error bands you don't want passed through
+#' @param subscripts subscripts, passed through the main plotting function
+#' @param dots passed from the main plotting function
+#' @param col passed from the main plotting function
+#' @param group.number passed from the main plotting function
+#' @param alpha transparency, passed from the main plotting function
 #' @param col.symbol is used to control color when using 'groups'
 #' @param border default = FALSE for panel.band.
-#' @param font
-#' @param fontface
+#' @param font passed from main plotting function
+#' @param fontface passed from the main plotting function
 #' @return The 'panel.bands', 'panel.fit', and 'panel.labels' functions are
 #'         invoked for their graphical effect.
 #' @author Georges Monette <georges@@yorku.ca>

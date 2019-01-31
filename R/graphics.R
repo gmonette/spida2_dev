@@ -759,7 +759,7 @@ change <- function(x,...) {
 #' data$subvar
 #' @param subgroups.type plotting type, typically 'p' or 'l', for each level of
 #' the variable passed through the \code{subgroups} argument
-#' @param type
+#' @param type (TO DO: Georges)
 #' @param panel.subgroups function use to plot data within in each group
 #' referring to the levels of the variable passed by \code{subgroups}.  Define
 #' a \code{panel.subgroups} argument in the call to \code{xyplot} and it will

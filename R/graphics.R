@@ -26,20 +26,20 @@ NULL
 #' ggplot2-like appearance. Default is n = 4
 #' @param new If new = TRUE, open a new window, otherwise modify the existing
 #' active window, if there is one.
-#' @param col
-#' @param lty
-#' @param lwd
-#' @param pch
-#' @param cex
+#' @param col (TO DO: Georges)
+#' @param lty (TO DO: Georges)
+#' @param lwd (TO DO: Georges)
+#' @param pch (TO DO: Georges)
+#' @param cex (TO DO: Georges)
 #' for each level of the groups variable
-#' @param font
-#' @param fill
-#' @param col.line
+#' @param font (TO DO: Georges)
+#' @param fill (TO DO: Georges)
+#' @param col.line (TO DO: Georges)
 #' not given
-#' @param col.symbol
+#' @param col.symbol (TO DO: Georges)
 #' 'groups' not given
-#' @param alpha
-#' @param alpha.line
+#' @param alpha (TO DO: Georges)
+#' @param alpha.line (TO DO: Georges)
 #' @param alpha.symbol graphical parameters for superpose.line and
 #' superpose.symbol
 #' @param len extend the length of parameters by recycling to length 'len'
@@ -48,8 +48,8 @@ NULL
 #' @param record If TRUE, set history to 'recording'. Caution: this can use a
 #' lot of memory in .GlobalEnv.  Consider adding selected graphs to memory with
 #' the 'Insert' key instead.
-#' @param basecol
-#' @param colsets
+#' @param basecol (TO DO: Georges)
+#' @param colsets (TO DO: Georges)
 #' @param \dots
 #' parameter: e.g. \code{plot.symbol=list(cex=2,col='red')}. Particular useful
 #' for the cex, col, lty, lwd, alpha, pch parameters in plot.line and
@@ -332,7 +332,7 @@ gd_ <- function(...) gd(superpose = FALSE, ...)
 #' @param \dots additional arguments passed to 'plot' command
 #' @param mfrow number of rows and columns per page. If missing, an attempt is
 #' made to choose a reasonable number.
-#' @param ask
+#' @param ask (TO DO: Georges)
 #' @param mcex character expansion factor for marginal text
 #' \code{mcex}
 #' @param maxlab maximum number of categories to label in barcharts
@@ -605,7 +605,7 @@ xqplot <- function(x,
 
 #' Show available characters, colours, etc.
 #'
-#' @param n
+#' @param n number of colours to display
 #' @param all default: FALSE
 #' @concept lattice
 #' @seealso \code{\link[lattice]{lattice::show.settings}}
@@ -659,7 +659,7 @@ if(all) {
 #'
 #' @param col colors to show
 #' @param border (default 'light gray')
-#' @param \dots
+#' @param \dots (TO DO: Georges)
 #' @export
 pal <- function(col=c('blue','pink'), border = "light gray", ...) {
      n <- length(col)
@@ -705,8 +705,8 @@ pals <- function(pattern = '', ignore = '^gray[0-9]|^grey[0-9]',
 
 #' Replace elements of x with correspondingly named elements of ll
 #'
-#' @param x
-#' @param ll
+#' @param x list or vector some of whose elements will be replaced or appended to 
+#' @param ll elements for replacement or appending
 #' @export
 change <- function(x,ll) {
   #

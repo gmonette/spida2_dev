@@ -4,8 +4,8 @@
 
 #' Intersection and symmetric differences of two sets
 #'
-#' @param A
-#' @param B
+#' @param A set A
+#' @param B set B
 #' @export
 part <- function( A, B) {
   # partitions of two sets

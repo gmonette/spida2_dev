@@ -6,6 +6,9 @@
 \usage{
 grepv(...)
 }
+\arguments{
+\item{\dots}{}
+}
 \description{
 Equivalent of grep(..., value = TRUE)
 }

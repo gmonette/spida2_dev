@@ -95,7 +95,3 @@ education | type, cbind(Prestige,chat)[order(Prestige$education),], type =
               auto.key = list(columns = 3, lines = TRUE, points = FALSE)
 }
 }
-\seealso{
-\code{\link{wald}} and \code{\link{Lfx}} for a new
-improved but experimental version.
-}

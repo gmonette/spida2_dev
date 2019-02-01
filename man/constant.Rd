@@ -26,7 +26,7 @@ to check whether `x` is constant}
 within subgroups created by `id`}
 }
 \description{
-Generic test for constant
+Illustrates more stuff in the help file.
 }
 \section{Methods (by class)}{
 \itemize{

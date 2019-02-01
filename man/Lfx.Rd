@@ -18,6 +18,10 @@ suitable matrix.}
 
 \item{data}{the data frame in which expressions are evaluated.}
 
+\item{wrap}{(TO DO: Georges)}
+
+\item{debug}{(TO DO: Georges)}
+
 \item{formula}{as an argument of \code{M}, a one-sided formula defining a
 main effect or an interaction term involving factors.}
 

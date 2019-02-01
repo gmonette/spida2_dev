@@ -7,6 +7,8 @@
 sampler(n = 24, all = FALSE)
 }
 \arguments{
+\item{n}{number of colours to display}
+
 \item{all}{default: FALSE}
 }
 \description{

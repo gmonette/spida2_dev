@@ -29,16 +29,39 @@ plot.symbol.}
 distinguish groups. 'gd' uses 'latticeExtra' to set defaults for a
 ggplot2-like appearance. Default is n = 4}
 
-\item{cex}{for each level of the groups variable}
+\item{col}{(TO DO: Georges)}
 
-\item{col.line}{not given}
+\item{lty}{(TO DO: Georges)}
 
-\item{col.symbol}{'groups' not given}
+\item{lwd}{(TO DO: Georges)}
+
+\item{pch}{(TO DO: Georges)}
+
+\item{cex}{(TO DO: Georges)
+for each level of the groups variable}
+
+\item{font}{(TO DO: Georges)}
+
+\item{fill}{(TO DO: Georges)}
+
+\item{col.line}{(TO DO: Georges)
+not given}
+
+\item{col.symbol}{(TO DO: Georges)
+'groups' not given}
+
+\item{alpha}{(TO DO: Georges)}
+
+\item{alpha.line}{(TO DO: Georges)}
 
 \item{alpha.symbol}{graphical parameters for superpose.line and
 superpose.symbol}
 
 \item{len}{extend the length of parameters by recycling to length 'len'}
+
+\item{basecol}{(TO DO: Georges)}
+
+\item{colsets}{(TO DO: Georges)}
 
 \item{new}{If new = TRUE, open a new window, otherwise modify the existing
 active window, if there is one.}

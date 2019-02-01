@@ -6,6 +6,15 @@
 \usage{
 ConjComp(X, Z = diag(nrow(X)), ip = diag(nrow(X)), tol = 1e-07)
 }
+\arguments{
+\item{X}{}
+
+\item{Z}{}
+
+\item{ip}{(TO DO: Georges)}
+
+\item{tol}{(TO DO: Georges)}
+}
 \description{
 Conjugate complement of span(X) in span(Z) with respect to inner product ip
 }

@@ -184,7 +184,7 @@ REFERENCES HERE
          \code{\link{Lfx}}, \code{\link{getX}}, \code{\link{M}},
          \code{\link{Lall}},\code{\link{Lc}},\code{\link{Lequal}},
          \code{\link{Ldiff}},\code{\link{Lmu}},\code{\link{Lmat}},\code{\link{Lrm}},
-         \code{\link{Leff}}, \code{\link{as.data.frame.wald}}. To extend to new
+         \code{\link{as.data.frame.wald}}. To extend to new
          models see \code{\link{getFix}}. To generate hypothesis matrices for general
          splines see \code{\link{gsp}} and \code{\link{sc}}.
 }

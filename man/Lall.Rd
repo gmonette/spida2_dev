@@ -7,7 +7,7 @@
 Lall(fit, nam)
 }
 \value{
-hypothesis matrix
+
 }
 \description{
 Hypothesis matrix to test for lmer objects

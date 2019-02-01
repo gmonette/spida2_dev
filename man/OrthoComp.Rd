@@ -6,6 +6,13 @@
 \usage{
 OrthoComp(X, Z, tol = 1e-07)
 }
+\arguments{
+\item{X}{(TO DO: Georges)}
+
+\item{Z}{(TO DO: Georges)}
+
+\item{tol}{(TO DO: Georges)}
+}
 \description{
 Orthogonal basis for the orthogonal complement of the column space of a matrix.
 }

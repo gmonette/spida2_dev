@@ -386,8 +386,7 @@ model.matrix(~ ses * Sex * Sector,data=pred)
 
 #' @describeIn wald experimental version with RHS?
 #' @export
-wald2 <- function(fit, Llist = "",clevel=0.95, data = NULL, debug = FALSE , maxrows = 25,
-                 full = FALSE, fixed = FALSE, invert = FALSE, method = 'svd',df = NULL, RHS = 0) {
+wald2 <- function(fit, Llist = "",clevel=0.95, data = NULL, debug = FALSE , maxrows = 25, full = FALSE, fixed = FALSE, invert = FALSE, method = 'svd',df = NULL, RHS = 0) {
 #' GM: 2015 08 11:  to do:
 #'  Experimental version of wald with RHS
 #' NEEDS to be restructured with
@@ -1505,8 +1504,9 @@ Lequal <- function(fit, pat) {
 #' Hypothesis matrix to test for lmer objects
 #'
 #' @param fit
-#' @param pat
-#' @return hypothesis matrix
+#' @param nam
+#' @return 
+#'
 #' @export
 Lall <- function( fit , nam ) {
         if ( class(fit) != 'lmer' ) stop( "only implemented for lmer")

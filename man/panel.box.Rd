@@ -12,9 +12,23 @@ panel.box(x, y, se, lower = y - se, upper = y + se, width = if
 \arguments{
 \item{x, y}{arguments passed by 'layer'}
 
+\item{lower, upper}{lowe and upper limits of the error bands you don't want passed through}
+
+\item{subscripts}{subscripts, passed through the main plotting function}
+
+\item{group.number}{passed from the main plotting function}
+
+\item{alpha}{transparency, passed from the main plotting function}
+
+\item{col}{passed from the main plotting function}
+
 \item{col.symbol}{is used to control color when using 'groups'}
 
 \item{border}{default = FALSE for panel.band.}
+
+\item{font}{passed from main plotting function}
+
+\item{fontface}{passed from the main plotting function}
 
 \item{data}{data frame to be used to add additional values of numeric variable}
 
@@ -23,6 +37,8 @@ panel.box(x, y, se, lower = y - se, upper = y + se, width = if
 \item{xpd}{expansion factor to add points beyond minima and maxima. Default 1.0.}
 
 \item{fit}{fitted values of a model, generally passed through 'layer' from a call to 'xyplot': e.g. \code{xyplot( y ~ x, data, groups = g, fit = data$yhat, lower = with(data, yhat - 2*se), upper = with(data, yhat + 2*se), subscripts = T)}}
+
+\item{dots}{passed from the main plotting function}
 }
 \value{
 The 'panel.bands', 'panel.fit', and 'panel.labels' functions are

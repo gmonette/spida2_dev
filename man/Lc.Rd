@@ -9,6 +9,8 @@ Lc(fit, nam, ref = 1, verbose = 0)
 \arguments{
 \item{fit}{a fitted model with a 'getFix' method.}
 
+\item{ref}{reference level}
+
 \item{verbose}{}
 }
 \description{

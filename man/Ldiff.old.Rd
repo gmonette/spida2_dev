@@ -13,6 +13,8 @@ Ldiff.old(fit, pat, levnames = c(reflevel, substring(rownames(L), cut +
 \item{pat}{a regular expression that matches names of coefficients}
 
 \item{levnames}{level names; levnames = c(reflevel,substring(rownames(L),cut+1)}
+
+\item{reflevel}{reference level to test against}
 }
 \value{
 hypothesis matrix

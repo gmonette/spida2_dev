@@ -1293,7 +1293,7 @@ Ldiff.old <- function(fit, pat, levnames = c(reflevel,substring(rownames(L),cut+
 #' Version of Ldiff used in RDC
 #'
 #' @param fit a fitted model with a 'getFix' method.
-#' @param nam
+#' @param nam (TO DO: Georges)
 #' @param ref reference level to test against
 #' @return hypothesis matrix
 #' @export
@@ -1354,8 +1354,8 @@ Ldiff <- function( fit, pat, levnames = c(reflevel,substring(rownames(L),cut+1))
 #' Estimate predicted response for a factor level.
 #'
 #' @param fit a fitted model with a 'getFix' method.
-#' @param nam
-#' @param verbose
+#' @param nam (TO DO: Georges)
+#' @param verbose (TO DO: Georges)
 #' @export
 Lmu <- function(fit, nam, verbose = 0) {
        ## "Works only if 'nam' is a factor and a main effect and model has Intercept")
@@ -1385,9 +1385,9 @@ Lmu <- function(fit, nam, verbose = 0) {
 #' Hypothesis matrix for lmer objects: comparisons with reference level
 #'
 #' @param fit a fitted model with a 'getFix' method.
-#' @param nam
+#' @param nam (TO DO: Georges)
 #' @param ref reference level
-#' @param verbose
+#' @param verbose (TO DO: Georges)
 #'
 #' @export
 Lc <- function(fit, nam, ref = 1, verbose = 0) {

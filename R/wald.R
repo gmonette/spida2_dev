@@ -1268,7 +1268,7 @@ Lmat <- function(fit, pattern, fixed = FALSE, invert = FALSE, debug = FALSE) {
 }
 #' Older version of Ldiff
 #'
-#' @param fit
+#' @param fit a fitted model with a 'getFix' method.
 #' @param pat
 #' @param levnames
 #' @param reflevel
@@ -1292,7 +1292,7 @@ Ldiff.old <- function(fit, pat, levnames = c(reflevel,substring(rownames(L),cut+
 }
 #' Version of Ldiff used in RDC
 #'
-#' @param fit
+#' @param fit a fitted model with a 'getFix' method.
 #' @param nam
 #' @param ref
 #' @return hypothesis matrix
@@ -1314,7 +1314,7 @@ Ldiff.rdc <- function( fit, nam , ref = "no longer used") {
 
 #' Hypothesis matrix to test differencs in factor levels
 #'
-#' @param fit
+#' @param fit a fitted model with a 'getFix' method.
 #' @param pat
 #' @param levnames
 #' @param reflevel
@@ -1353,7 +1353,7 @@ Ldiff <- function( fit, pat, levnames = c(reflevel,substring(rownames(L),cut+1))
 
 #' Estimate predicted response for a factor level.
 #'
-#' @param fit
+#' @param fit a fitted model with a 'getFix' method.
 #' @param nam
 #' @param verbose
 #' @export
@@ -1384,7 +1384,7 @@ Lmu <- function(fit, nam, verbose = 0) {
 
 #' Hypothesis matrix for lmer objects: comparisons with reference level
 #'
-#' @param fit
+#' @param fit a fitted model with a 'getFix' method.
 #' @param nam
 #' @param ref
 #' @param verbose
@@ -1409,7 +1409,7 @@ Lc <- function(fit, nam, ref = 1, verbose = 0) {
 
 #' Construct hypothesis matrix to test repeated measures factor effects
 #'
-#' @param fit
+#' @param fit a fitted model with a 'getFix' method.
 #' @param nam
 #' @param vals
 #' @return hypothesis matrix
@@ -1435,7 +1435,7 @@ Lrm <- function(fit, nam, vals = 1:nrow(L.mu)) {
 
 #' Construct hypothesis matrix to test ????
 #'
-#' @param fit
+#' @param fit a fitted model with a 'getFix' method.
 #' @param factors
 #' @return a hypothesis matrix
 #' @export
@@ -1471,7 +1471,7 @@ Lcall <- function( fit , factors = getFactorNames(fit), debug = F){
 
 #' Hypothesis matrix to test equality of factor level effects
 #'
-#' @param fit
+#' @param fit a fitted model with a 'getFix' method.
 #' @param pat
 #' @return hypothesis matrix
 #' @export
@@ -1503,7 +1503,7 @@ Lequal <- function(fit, pat) {
 
 #' Hypothesis matrix to test for lmer objects
 #'
-#' @param fit
+#' @param fit a fitted model with a 'getFix' method.
 #' @param nam
 #' @return 
 #'

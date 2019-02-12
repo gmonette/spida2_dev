@@ -1271,7 +1271,7 @@ Lmat <- function(fit, pattern, fixed = FALSE, invert = FALSE, debug = FALSE) {
 #' @param fit a fitted model with a 'getFix' method.
 #' @param pat a regular expression that matches names of coefficients
 #' @param levnames level names; levnames = c(reflevel,substring(rownames(L),cut+1)
-#' @param reflevel
+#' @param reflevel reference level to test against
 #' @param cut
 #' @return hypothesis matrix
 #' @export
@@ -1294,7 +1294,7 @@ Ldiff.old <- function(fit, pat, levnames = c(reflevel,substring(rownames(L),cut+
 #'
 #' @param fit a fitted model with a 'getFix' method.
 #' @param nam
-#' @param ref
+#' @param ref reference level to test against
 #' @return hypothesis matrix
 #' @export
 Ldiff.rdc <- function( fit, nam , ref = "no longer used") {
@@ -1317,9 +1317,9 @@ Ldiff.rdc <- function( fit, nam , ref = "no longer used") {
 #' @param fit a fitted model with a 'getFix' method.
 #' @param pat a regular expression that matches names of coefficients
 #' @param levnames level names; levnames = c(reflevel,substring(rownames(L),cut+1)
-#' @param reflevel
-#' @param cut
-#' @param verbose
+#' @param reflevel reference level to test against
+#' @param cut (TO DO: Georges)
+#' @param verbose (TO DO: Georges)
 #' @return hypothesis matrix
 #' @export
 Ldiff <- function( fit, pat, levnames = c(reflevel,substring(rownames(L),cut+1)),
@@ -1386,7 +1386,7 @@ Lmu <- function(fit, nam, verbose = 0) {
 #'
 #' @param fit a fitted model with a 'getFix' method.
 #' @param nam
-#' @param ref
+#' @param ref reference level
 #' @param verbose
 #'
 #' @export
@@ -1436,7 +1436,7 @@ Lrm <- function(fit, nam, vals = 1:nrow(L.mu)) {
 #' Construct hypothesis matrix to test ????
 #'
 #' @param fit a fitted model with a 'getFix' method.
-#' @param factors
+#' @param factors the factors of the fitted model
 #' @return a hypothesis matrix
 #' @export
 Lcall <- function( fit , factors = getFactorNames(fit), debug = F){

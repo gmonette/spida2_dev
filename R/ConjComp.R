@@ -3,12 +3,6 @@
 ###
 
 #' Conjugate complement of span(X) in span(Z) with respect to inner product ip
-#' 
-#'ConjComp returns a basis for the conjugate complement of the
-#'conjugate projection of X into span(Z) with respect to inner product with
-#'matrix ip.
-#'
-#'Note: Z is assumed to be of full column rank but not necessarily X.
 #'
 #'@param X   (TO DO: Georges)
 #'@param Z   (TO DO: Georges)
@@ -19,6 +13,12 @@
 ConjComp <- 
   function( X , Z = diag( nrow(X)) , ip = diag( nrow(X)), tol = 1e-07 ) 
     {
+  help <- "
+  ConjComp returns a basis for the conjugate complement of the
+  conjugate projection of X into span(Z) with respect to inner product with
+  matrix ip.
+  Note: Z is assumed to be of full column rank but not necessarily X.
+  "
 
   xq <- qr(t(Z) %*% ip %*% X, tol = tol)
   if ( xq$rank == 0 ) return( Z )

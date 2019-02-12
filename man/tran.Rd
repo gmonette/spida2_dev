@@ -6,6 +6,15 @@
 \usage{
 tran(from, to, x, tofactor = is.factor(x))
 }
+\arguments{
+\item{from}{vector to translate from}
+
+\item{to}{vector to translate to}
+
+\item{x}{vector to apply translation to}
+
+\item{tofactor}{will provide output with Levels if is.factor(x) is TRUE}
+}
 \description{
 This should return something like 'to' whenever all of 'x'
 is in 'from'

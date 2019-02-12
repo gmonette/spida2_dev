@@ -6,6 +6,13 @@
 \usage{
 map(from, to, x)
 }
+\arguments{
+\item{from}{vector to apply mapping from}
+
+\item{to}{vector to translate from}
+
+\item{x}{vector to translate to}
+}
 \description{
 A mnemonic for \code{to[match(x, from)]}. Compare with the more elaborate \code{\link[yscs]{tran}}.
 }

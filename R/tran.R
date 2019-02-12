@@ -12,10 +12,10 @@
 #' leave it unchanged
 #' which conflicts with my versions of tr, ergo this is called tran
 #'
-#' @param from
-#' @param to
-#' @param x
-#' @param tofactor
+#' @param from vector to translate from 
+#' @param to vector to translate to 
+#' @param x vector to apply translation to
+#' @param tofactor will provide output with Levels if is.factor(x) is TRUE
 #' @export
 tran <- function( from, to, x, tofactor = is.factor(x)) {
 	if(is.factor(from)) from <- as.character(from)
@@ -41,9 +41,9 @@ tran <- function( from, to, x, tofactor = is.factor(x)) {
 #'
 #' Changes the order of arguments in \code{\link{tran}}.
 #'
-#' @param x
-#' @param from
-#' @param to
+#' @param x vector to apply translation to
+#' @param from vector to translate from 
+#' @param to vector to translate to 
 #' @export
 tr <- function( x, from , to ) tran( from, to, x)
 
@@ -51,9 +51,9 @@ tr <- function( x, from , to ) tran( from, to, x)
 #'
 #' A mnemonic for \code{to[match(x, from)]}. Compare with the more elaborate \code{\link[yscs]{tran}}.
 #'
-#' @param from
-#' @param to
-#' @param x
+#' @param from vector to apply mapping from 
+#' @param to vector to translate from 
+#' @param x vector to translate to 
 #' @examples
 #' x.from <- c('A',"FromNA",'Z','B',"N")
 #' x.to   <- factor(c('a',NA,'z','b',NA),levels=c('z','a','b',NA))

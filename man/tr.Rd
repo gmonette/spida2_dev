@@ -6,6 +6,13 @@
 \usage{
 tr(x, from, to)
 }
+\arguments{
+\item{x}{vector to apply translation to}
+
+\item{from}{vector to translate from}
+
+\item{to}{vector to translate to}
+}
 \description{
 Changes the order of arguments in \code{\link{tran}}.
 }

@@ -9,9 +9,11 @@ Lc(fit, nam, ref = 1, verbose = 0)
 \arguments{
 \item{fit}{a fitted model with a 'getFix' method.}
 
+\item{nam}{(TO DO: Georges)}
+
 \item{ref}{reference level}
 
-\item{verbose}{}
+\item{verbose}{(TO DO: Georges)}
 }
 \description{
 Hypothesis matrix for lmer objects: comparisons with reference level

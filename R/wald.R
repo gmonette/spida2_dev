@@ -1272,7 +1272,7 @@ Lmat <- function(fit, pattern, fixed = FALSE, invert = FALSE, debug = FALSE) {
 #' @param pat a regular expression that matches names of coefficients
 #' @param levnames level names; levnames = c(reflevel,substring(rownames(L),cut+1)
 #' @param reflevel reference level to test against
-#' @param cut
+#' @param cut (TO DO: Georges)
 #' @return hypothesis matrix
 #' @export
 Ldiff.old <- function(fit, pat, levnames = c(reflevel,substring(rownames(L),cut+1)),

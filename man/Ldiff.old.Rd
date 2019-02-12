@@ -15,6 +15,8 @@ Ldiff.old(fit, pat, levnames = c(reflevel, substring(rownames(L), cut +
 \item{levnames}{level names; levnames = c(reflevel,substring(rownames(L),cut+1)}
 
 \item{reflevel}{reference level to test against}
+
+\item{cut}{(TO DO: Georges)}
 }
 \value{
 hypothesis matrix

@@ -9,6 +9,8 @@ Ldiff.rdc(fit, nam, ref = "no longer used")
 \arguments{
 \item{fit}{a fitted model with a 'getFix' method.}
 
+\item{nam}{(TO DO: Georges)}
+
 \item{ref}{reference level to test against}
 }
 \value{

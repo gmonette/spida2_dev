@@ -8,6 +8,10 @@ Lmu(fit, nam, verbose = 0)
 }
 \arguments{
 \item{fit}{a fitted model with a 'getFix' method.}
+
+\item{nam}{(TO DO: Georges)}
+
+\item{verbose}{(TO DO: Georges)}
 }
 \description{
 Estimate predicted response for a factor level.

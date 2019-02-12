@@ -1270,7 +1270,7 @@ Lmat <- function(fit, pattern, fixed = FALSE, invert = FALSE, debug = FALSE) {
 #'
 #' @param fit a fitted model with a 'getFix' method.
 #' @param pat a regular expression that matches names of coefficients
-#' @param levnames
+#' @param levnames level names; levnames = c(reflevel,substring(rownames(L),cut+1)
 #' @param reflevel
 #' @param cut
 #' @return hypothesis matrix
@@ -1316,7 +1316,7 @@ Ldiff.rdc <- function( fit, nam , ref = "no longer used") {
 #'
 #' @param fit a fitted model with a 'getFix' method.
 #' @param pat a regular expression that matches names of coefficients
-#' @param levnames
+#' @param levnames level names; levnames = c(reflevel,substring(rownames(L),cut+1)
 #' @param reflevel
 #' @param cut
 #' @param verbose

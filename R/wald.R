@@ -1410,8 +1410,8 @@ Lc <- function(fit, nam, ref = 1, verbose = 0) {
 #' Construct hypothesis matrix to test repeated measures factor effects
 #'
 #' @param fit a fitted model with a 'getFix' method.
-#' @param nam
-#' @param vals
+#' @param nam (TO DO: Georges)
+#' @param vals (TO DO: Georges)
 #' @return hypothesis matrix
 #' @export
 Lrm <- function(fit, nam, vals = 1:nrow(L.mu)) {
@@ -1504,7 +1504,7 @@ Lequal <- function(fit, pat) {
 #' Hypothesis matrix to test for lmer objects
 #'
 #' @param fit a fitted model with a 'getFix' method.
-#' @param nam
+#' @param nam (TO DO: Geoges)
 #' @return 
 #'
 #' @export

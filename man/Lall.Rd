@@ -8,6 +8,8 @@ Lall(fit, nam)
 }
 \arguments{
 \item{fit}{a fitted model with a 'getFix' method.}
+
+\item{nam}{(TO DO: Geoges)}
 }
 \value{
 

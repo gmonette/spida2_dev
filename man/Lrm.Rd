@@ -8,6 +8,10 @@ Lrm(fit, nam, vals = 1:nrow(L.mu))
 }
 \arguments{
 \item{fit}{a fitted model with a 'getFix' method.}
+
+\item{nam}{(TO DO: Georges)}
+
+\item{vals}{(TO DO: Georges)}
 }
 \value{
 hypothesis matrix

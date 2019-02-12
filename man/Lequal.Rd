@@ -8,6 +8,8 @@ Lequal(fit, pat)
 }
 \arguments{
 \item{fit}{a fitted model with a 'getFix' method.}
+
+\item{pat}{a regular expression that matches names of coefficients}
 }
 \value{
 hypothesis matrix

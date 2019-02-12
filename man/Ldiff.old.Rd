@@ -9,6 +9,10 @@ Ldiff.old(fit, pat, levnames = c(reflevel, substring(rownames(L), cut +
 }
 \arguments{
 \item{fit}{a fitted model with a 'getFix' method.}
+
+\item{pat}{a regular expression that matches names of coefficients}
+
+\item{levnames}{level names; levnames = c(reflevel,substring(rownames(L),cut+1)}
 }
 \value{
 hypothesis matrix

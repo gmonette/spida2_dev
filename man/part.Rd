@@ -6,6 +6,11 @@
 \usage{
 part(A, B)
 }
+\arguments{
+\item{A}{set A}
+
+\item{B}{set B}
+}
 \description{
 Intersection and symmetric differences of two sets
 }

@@ -7,9 +7,9 @@
 ConjComp(X, Z = diag(nrow(X)), ip = diag(nrow(X)), tol = 1e-07)
 }
 \arguments{
-\item{X}{}
+\item{X}{(TO DO: Georges)}
 
-\item{Z}{}
+\item{Z}{(TO DO: Georges)}
 
 \item{ip}{(TO DO: Georges)}
 

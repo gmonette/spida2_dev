@@ -6,6 +6,9 @@
 \usage{
 Lcall(fit, factors = getFactorNames(fit), debug = F)
 }
+\arguments{
+\item{fit}{a fitted model with a 'getFix' method.}
+}
 \value{
 a hypothesis matrix
 }

@@ -6,6 +6,9 @@
 \usage{
 Lall(fit, nam)
 }
+\arguments{
+\item{fit}{a fitted model with a 'getFix' method.}
+}
 \value{
 
 }

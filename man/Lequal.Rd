@@ -6,6 +6,9 @@
 \usage{
 Lequal(fit, pat)
 }
+\arguments{
+\item{fit}{a fitted model with a 'getFix' method.}
+}
 \value{
 hypothesis matrix
 }

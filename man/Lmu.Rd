@@ -6,6 +6,9 @@
 \usage{
 Lmu(fit, nam, verbose = 0)
 }
+\arguments{
+\item{fit}{a fitted model with a 'getFix' method.}
+}
 \description{
 Estimate predicted response for a factor level.
 }

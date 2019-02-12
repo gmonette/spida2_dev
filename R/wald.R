@@ -1269,7 +1269,7 @@ Lmat <- function(fit, pattern, fixed = FALSE, invert = FALSE, debug = FALSE) {
 #' Older version of Ldiff
 #'
 #' @param fit a fitted model with a 'getFix' method.
-#' @param pat
+#' @param pat a regular expression that matches names of coefficients
 #' @param levnames
 #' @param reflevel
 #' @param cut
@@ -1315,7 +1315,7 @@ Ldiff.rdc <- function( fit, nam , ref = "no longer used") {
 #' Hypothesis matrix to test differencs in factor levels
 #'
 #' @param fit a fitted model with a 'getFix' method.
-#' @param pat
+#' @param pat a regular expression that matches names of coefficients
 #' @param levnames
 #' @param reflevel
 #' @param cut
@@ -1472,7 +1472,7 @@ Lcall <- function( fit , factors = getFactorNames(fit), debug = F){
 #' Hypothesis matrix to test equality of factor level effects
 #'
 #' @param fit a fitted model with a 'getFix' method.
-#' @param pat
+#' @param pat a regular expression that matches names of coefficients
 #' @return hypothesis matrix
 #' @export
 Lequal <- function(fit, pat) {

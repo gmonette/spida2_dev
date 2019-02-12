@@ -7,6 +7,9 @@
 Ldiff.old(fit, pat, levnames = c(reflevel, substring(rownames(L), cut +
   1)), reflevel = "<ref>", cut = nchar(pat))
 }
+\arguments{
+\item{fit}{a fitted model with a 'getFix' method.}
+}
 \value{
 hypothesis matrix
 }

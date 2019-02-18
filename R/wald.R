@@ -1152,7 +1152,7 @@ print.cat <- function(object,...) {
 #' \code{L}.  formula defining a main effect or an interaction term involving
 #' factors.
 #' @return hypothesis matrix
-#' @seealso \code{\link{wald} and \code{\link{Lfx}} for a new
+#' @seealso \code{\link{wald}} and \code{\link{Lfx}} for a new
 #' improved but experimental version.
 #' @examples
 #' \dontrun{

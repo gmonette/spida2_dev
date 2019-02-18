@@ -1087,7 +1087,7 @@ getFactorNames.default <- function(object,...) getFactorNames( getData(object))
 #' Print method for 'cat' objects
 #'
 #' @param x vector of 'cat' objects
-#' @param \dots
+#' @param @dots 
 #' @return invisible(x)
 #' @export
 print.cat <- function(object,...) {

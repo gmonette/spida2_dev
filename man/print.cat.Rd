@@ -8,6 +8,8 @@
 }
 \arguments{
 \item{x}{vector of 'cat' objects}
+
+\item{@dots}{}
 }
 \value{
 invisible(x)

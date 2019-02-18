@@ -9,7 +9,9 @@ Useful to equate polynomial coefficients for a periodic spline}
 PolyShift(x, n)
 }
 \arguments{
-\item{x}{}
+\item{x}{(TO DO: GEORGES)}
+
+\item{n}{(TO DO: GEORGES)}
 }
 \description{
 Transformation of polynomial coefficients to change origin

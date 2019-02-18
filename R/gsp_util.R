@@ -328,7 +328,7 @@ Proj.test <- function( x, fun = Proj) {
 #' @param degree 
 #' @param smooth 
 #' @param intercept 
-#' @param signif
+#' @param signif (TO DO:GEORGES)
 #' @export
 gspf.1 <- function( x, knots, degree= 3, smooth = pmax(pmin( degree[-1],
                                                              degree[ - length(degree)]) - 1,0 ), intercept = 0, signif = 3) {
@@ -445,8 +445,8 @@ smsp <- function( x, knots ) {
 #' Transformation of polynomial coefficients to change origin
 #'  
 #' Useful to equate polynomial coefficients for a periodic spline
-#' @param x 
-#' @param n
+#' @param x (TO DO: GEORGES)
+#' @param n (TO DO: GEORGES)
 #' @examples
 #' coefs <- c(3,2,4)
 #' x <- 3

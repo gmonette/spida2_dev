@@ -17,6 +17,8 @@ gspf.1(x, knots, degree = 3, smooth = pmax(pmin(degree[-1],
 \item{smooth}{}
 
 \item{intercept}{}
+
+\item{signif}{(TO DO:GEORGES)}
 }
 \description{
 Marked for deletion

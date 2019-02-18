@@ -12,6 +12,8 @@
 \item{round}{(TO DO: GEORGES)}
 
 \item{pround}{(TO DO: GEORGES)}
+
+\item{\dots}{(TO DO: GEORGES)}
 }
 \value{
 called for

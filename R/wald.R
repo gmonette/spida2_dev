@@ -577,7 +577,7 @@ wald2 <- function(fit, Llist = "",clevel=0.95, data = NULL, debug = FALSE , maxr
 #' @param x (TO DO: GEORGES)
 #' @param round (TO DO: GEORGES)
 #' @param pround (TO DO: GEORGES)
-#' @param \dots
+#' @param \dots (TO DO: GEORGES)
 #' @return called for
 #' @note This is a note
 #' @author GM

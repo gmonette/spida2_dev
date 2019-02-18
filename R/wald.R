@@ -574,9 +574,9 @@ wald2 <- function(fit, Llist = "",clevel=0.95, data = NULL, debug = FALSE , maxr
 }
 #' Print method for wald objects
 #'
-#' @param x
-#' @param round
-#' @param pround
+#' @param x (TO DO: GEORGES)
+#' @param round (TO DO: GEORGES)
+#' @param pround (TO DO: GEORGES)
 #' @param \dots
 #' @return called for
 #' @note This is a note

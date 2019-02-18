@@ -1005,7 +1005,7 @@ getFix.default <- function(fit, ...) stop(paste("Write a 'getFix' method for cla
 
 #' Generic 'vcov' extended to objects with a \code{getFix} method
 #'
-#' @param fit c
+#' @param fit user-selected statistical model (see Usage) 
 #' @return estimated variance covariance matrix of fixed effects
 #' @author GM
 #' @export
@@ -1086,7 +1086,7 @@ getFactorNames.default <- function(object,...) getFactorNames( getData(object))
 
 #' Print method for 'cat' objects
 #'
-#' @param x
+#' @param x vector of 'cat' objects
 #' @param \dots
 #' @return invisible(x)
 #' @export

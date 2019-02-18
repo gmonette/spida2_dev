@@ -6,6 +6,13 @@
 \usage{
 \method{print}{wald}(x, round = 6, pround = 5, ...)
 }
+\arguments{
+\item{x}{(TO DO: GEORGES)}
+
+\item{round}{(TO DO: GEORGES)}
+
+\item{pround}{(TO DO: GEORGES)}
+}
 \value{
 called for
 }

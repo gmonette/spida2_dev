@@ -6,6 +6,9 @@
 \usage{
 \method{print}{cat}(object, ...)
 }
+\arguments{
+\item{x}{vector of 'cat' objects}
+}
 \value{
 invisible(x)
 }

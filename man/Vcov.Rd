@@ -9,6 +9,9 @@ Vcov(fit)
 
 Vcor(fit)
 }
+\arguments{
+\item{fit}{user-selected statistical model (see Usage)}
+}
 \value{
 estimated variance covariance matrix of fixed effects
 }

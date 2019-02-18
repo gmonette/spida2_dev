@@ -1005,7 +1005,7 @@ getFix.default <- function(fit, ...) stop(paste("Write a 'getFix' method for cla
 
 #' Generic 'vcov' extended to objects with a \code{getFix} method
 #'
-#' @param fit
+#' @param fit c
 #' @return estimated variance covariance matrix of fixed effects
 #' @author GM
 #' @export
